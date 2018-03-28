@@ -19,6 +19,6 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./notebooks:/opt/odc/notebooks:rw
+      - ./notebooks:/notebooks
     shm_size: 1g
     command: jupyter notebook --ip="*" --NotebookApp.token='secretpassword'
