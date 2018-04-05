@@ -1,0 +1,33 @@
+FROM opendatacube/datacube-core
+
+# Get dependencies for Jupyter
+# RUN apt-get update && apt-get install -y \
+#     ipython ipython-notebook \
+#     && rm -rf /var/lib/apt/lists/*
+RUN pip3 install \
+    jupyter matplotlib \
+    && rm -rf $HOME/.cache/pip
+
+# Copy some components of configuration of Jupyter from https://github.com/jupyter/docker-stacks/
+# Configure environment
+ENV NB_USER=jupyter \
+    NB_UID=1000 \
+    NB_GID=100
+ENV HOME=/notebooks
+RUN mkdir $HOME
+
+ADD https://raw.githubusercontent.com/jupyter/docker-stacks/master/base-notebook/fix-permissions /usr/local/bin/fix-permissions
+RUN chmod +x /usr/local/bin/fix-permissions 
+# Create user with UID=1000 and in the 'users' group
+# and make sure these dirs are writable by the `users` group.
+RUN useradd -m -s /bin/bash -N -u $NB_UID $NB_USER && \
+    chmod g+w /etc/passwd /etc/group && \
+    fix-permissions $HOME
+
+# Set up the environment
+WORKDIR $HOME
+EXPOSE 8888
+CMD ["jupyter","notebook", "--ip=\"*\""]
+
+# Switch back to jovyan to avoid accidental container runs as root
+USER $NB_UID
