@@ -1,7 +1,7 @@
 FROM opendatacube/datacube-core
 
 RUN pip3 install \
-    fiona shapely gunicorn \
+    fiona shapely gunicorn flask \
     && rm -rf $HOME/.cache/pip
 
 RUN apt-get update && apt-get install -y \
