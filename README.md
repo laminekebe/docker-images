@@ -1,3 +1,8 @@
-# docker-images
-The docker image csirodatacube/odc-dev will be auto-build from the folder /odc-dev and tag names "odc-dev-*".
-The docker image csirodatacube/datacubecore will be auto-build from the folder /datacubecore and tag names "datacubecore-*".
+# OpenDataCube Docker Images
+This repository holds a number of reference Docker images for the OpenDataCube project.
+
+## Images
+
+* [Jupyter](jupyter/readme.md)
+* [Dashboard](dashboard/readme.md)
+* [WMS](wms/readme.md)
