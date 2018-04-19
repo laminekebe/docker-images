@@ -17,4 +17,4 @@ WORKDIR /code
 
 RUN python3 setup.py install
 
-CMD gunicorn -b '0.0.0.0:80' -w 1 --timeout 300 cubedash:app
+CMD gunicorn -b '0.0.0.0:8000' -w 1 --timeout 300 cubedash:app
