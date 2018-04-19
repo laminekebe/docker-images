@@ -14,6 +14,7 @@ RUN wget https://github.com/data-cube/dea-dashboard/archive/next-core.zip -O /tm
     && mv /tmp/code/dea-dashboard-next-core /code
 
 WORKDIR /code
+RUN mkdir /code/product-summaries
 
 RUN python3 setup.py install
 
