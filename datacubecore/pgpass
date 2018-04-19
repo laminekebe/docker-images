@@ -1,3 +1,0 @@
-# host:port:database(s):username:password
-localhost:5432:*:username:password
-
