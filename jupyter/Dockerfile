@@ -1,9 +1,6 @@
 FROM opendatacube/datacube-core
 
 # Get dependencies for Jupyter
-# RUN apt-get update && apt-get install -y \
-#     ipython ipython-notebook \
-#     && rm -rf /var/lib/apt/lists/*
 RUN pip3 install \
     jupyter matplotlib \
     && rm -rf $HOME/.cache/pip
