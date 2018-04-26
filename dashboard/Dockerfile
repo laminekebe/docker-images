@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /tmp/code
 RUN wget https://github.com/data-cube/dea-dashboard/archive/next-core.zip -O /tmp/dashboard.zip \
     && unzip /tmp/dashboard.zip \
-    && mv /tmp/code/dea-dashboard-next-core /code
+    && mv /tmp/code/dea-dashboard-next-core /code \
+    && rm /tmp/dashboard.zip
 
 WORKDIR /code
 RUN mkdir /code/product-summaries
