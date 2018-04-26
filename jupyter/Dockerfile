@@ -2,7 +2,7 @@ FROM opendatacube/datacube-core
 
 # Get dependencies for Jupyter
 RUN pip3 install \
-    jupyter matplotlib \
+    jupyter matplotlib folium \
     && rm -rf $HOME/.cache/pip
 
 # Copy some components of configuration of Jupyter from https://github.com/jupyter/docker-stacks/
