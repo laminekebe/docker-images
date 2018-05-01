@@ -17,4 +17,7 @@ WORKDIR /code
 
 RUN python3 setup.py install
 
-CMD gunicorn -b '0.0.0.0:8000' -w 1 --timeout 300 datacube_wms:wms
+COPY assets/run.sh run.sh
+COPY assets/get_wms_config.sh get_wms_config.sh
+
+CMD ./run.sh
