@@ -2,5 +2,5 @@
 
 if [ "$WMS_CONFIG_URL" ]
 then
-   wget "$WMS_CONFIG_URL" -O /code/datacube_wms/wms_cfg.py
+    A=$$; ( wget -q "$WMS_CONFIG_URL" -O $A.d && mv $A.d /code/datacube_wms/wms_cfg.py ) || (rm $A.d; echo "Failed to download WMS config file")
 fi
