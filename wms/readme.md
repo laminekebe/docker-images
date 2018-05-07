@@ -14,3 +14,7 @@ docker run \
 Also not the Docker Compose file showing how to run the app with a database and Nginx proxy. You can start this with `docker-compose up`.
 
 The image comes with the standard ODC installed, including the entrypoint that sets the config from the environment.
+
+Additionally, the image includes another flag that can be used to grab a config file from a URL:
+
+* `WMS_CONFIG_URL`
