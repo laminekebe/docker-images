@@ -5,7 +5,7 @@ To run this image, use something like:
 ```
 docker run \
     --rm \
-    opendatacube/jupyter \
+    opendatacube/datacube-jupyter \
     jupyter notebook --ip="*" --NotebookApp.token='secretpassword'
 ```
 
