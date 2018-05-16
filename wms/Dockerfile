@@ -17,8 +17,8 @@ WORKDIR /code
 
 RUN python3 setup.py install
 
-COPY docker/wms-entrypoint.sh /usr/local/bin/wms-entrypoint.sh
-COPY docker/get_wms_config.sh /usr/local/bin/get_wms_config.sh
+COPY assets/wms-entrypoint.sh /usr/local/bin/wms-entrypoint.sh
+COPY assets/get_wms_config.sh /usr/local/bin/get_wms_config.sh
 
 ENTRYPOINT ["wms-entrypoint.sh"]
 
