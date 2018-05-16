@@ -9,16 +9,16 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp/code
-RUN wget https://github.com/opendatacube/datacube-wms/archive/master.zip -O /tmp/dashboard.zip \
+RUN wget https://github.com/opendatacube/datacube-wms/archive/mdba.zip -O /tmp/dashboard.zip \
     && unzip /tmp/dashboard.zip \
-    && mv /tmp/code/datacube-wms-master /code
+    && mv /tmp/code/datacube-wms-mdba /code
 
 WORKDIR /code
 
 RUN python3 setup.py install
 
-COPY assets/wms-entrypoint.sh /usr/local/bin/wms-entrypoint.sh
-COPY assets/get_wms_config.sh /usr/local/bin/get_wms_config.sh
+COPY docker/wms-entrypoint.sh /usr/local/bin/wms-entrypoint.sh
+COPY docker/get_wms_config.sh /usr/local/bin/get_wms_config.sh
 
 ENTRYPOINT ["wms-entrypoint.sh"]
 
