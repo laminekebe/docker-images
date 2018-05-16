@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /tmp/code
+ADD https://api.github.com/repos/opendatacube/datacube-wms/git/refs/heads/mdba version.json
 RUN wget https://github.com/opendatacube/datacube-wms/archive/mdba.zip -O /tmp/dashboard.zip \
     && unzip /tmp/dashboard.zip \
     && mv /tmp/code/datacube-wms-mdba /code
