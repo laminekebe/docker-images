@@ -18,3 +18,8 @@ There is also a simple Docker Compose file, so you can run the application with 
 ```
 
 Note that the current version requires you to add a user to the docker container when it's running.
+
+You can do this with:
+    `docker-compose exec jupyterhub adduser user`
+
+which will add a user called 'user' and prompt you for a password.
