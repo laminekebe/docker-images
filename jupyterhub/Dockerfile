@@ -1,4 +1,4 @@
-FROM opendatacube/datacube-core:1.5.4
+FROM opendatacube/datacube-core
 
 RUN apt-get update && apt-get install -y npm nodejs
 RUN npm install -g configurable-http-proxy
