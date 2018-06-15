@@ -1,4 +1,4 @@
-FROM opendatacube/datacube-core
+FROM opendatacube:datacube-core
 
 # Get dependencies for Jupyter
 RUN pip3 install \
@@ -7,7 +7,7 @@ RUN pip3 install \
 
 # Copy some components of configuration of Jupyter from https://github.com/jupyter/docker-stacks/
 # Configure environment
-ENV NB_USER=jupyter \
+ENV NB_USER=jovyan \
     NB_UID=1000 \
     NB_GID=100
 ENV HOME=/notebooks
