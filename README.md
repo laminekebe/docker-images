@@ -6,3 +6,4 @@ This repository holds a number of reference Docker images for the OpenDataCube p
 * [Jupyter](jupyter/readme.md)
 * [Dashboard](dashboard/readme.md)
 * [WMS](wms/readme.md)
+* [JupyterHub](jupyterhub/readme.md)
