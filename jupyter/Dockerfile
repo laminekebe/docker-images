@@ -1,4 +1,4 @@
-FROM opendatacube:datacube-core
+FROM opendatacube/datacube-core
 
 # Get dependencies for Jupyter
 RUN pip3 install \
