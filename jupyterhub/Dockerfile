@@ -5,7 +5,7 @@ RUN npm install -g configurable-http-proxy
 
 # Get dependencies for Jupyter
 RUN pip3 install \
-    jupyter jupyterhub matplotlib folium \
+    jupyter jupyterhub jupyterlab matplotlib folium \
     && rm -rf $HOME/.cache/pip
 
 RUN mkdir /conf && chmod -R 777 /conf
